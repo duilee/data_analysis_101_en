@@ -1,0 +1,12 @@
+# TF-IDF and LDA results (scikit-learn) can change between versions, so this one is pinned
+# to reproduce the exact numbers shown in the book.
+scikit-learn==1.9.0
+
+# The packages below can be installed at their latest versions.
+pandas
+numpy
+matplotlib
+wordcloud
+Pillow
+networkx
+jupyter

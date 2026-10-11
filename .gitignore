@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Notebook runtime artifacts (saved models / exported labels)
+models/
+output/
+*.pkl
+
+# Article drafts (canonical copy lives in Google Docs)
+*.docx
+
+# Reader practice outputs (written by the /da101 skill)
+my-work/

@@ -1,0 +1,14 @@
+property_name,scope,data_type,allowed_values,description,events
+step,event,enum,1|2|3|4,Onboarding step number,page_view_onboarding_step|tap_onboarding_next|tap_onboarding_skip
+permission,event,enum,notification|camera|location,Kind of permission granted,system_permission_granted
+banner_id,event,string,,Banner identifier,view_main_banner|tap_main_banner
+content_id,event,string,,Content identifier,view_content_card|tap_content_card|page_view_content_detail|tap_like_button|tap_share_button
+content_type,event,enum,article|video,Kind of content,view_content_card|tap_content_card|page_view_content_detail
+position,event,int,,Position within the feed (0-based),view_content_card|tap_content_card|tap_search_result
+channel,event,enum,kakao|instagram|link,Share channel,tap_share_button
+source,event,enum,home|content_detail|settings|push,Entry path to the payment screen,page_view_paywall
+plan,event,enum,monthly|yearly,Subscription plan,tap_purchase_button|system_subscription_started|system_subscription_renewed
+theme,event,enum,dark|light,Theme switched to,tap_theme_toggle
+push_type,event,enum,daily|content|promo,Kind of push,system_push_sent|tap_push_notification
+subscription_status,user,enum,free|trial|paid|churned,Subscription status,
+signup_date,user,date,,Signup date,

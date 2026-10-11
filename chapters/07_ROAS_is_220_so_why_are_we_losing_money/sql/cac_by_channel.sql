@@ -1,0 +1,16 @@
+-- CAC by channel: media-cost basis vs fully-loaded (2025-04)
+-- Organic has no cost row, so it naturally drops out of the join (paid-only calculation)
+SELECT c.channel
+     , u.new_users
+     , ROUND(c.media_cost_krw / u.new_users) AS cac_media
+     , ROUND((c.media_cost_krw + c.other_cost_krw)
+             / u.new_users) AS cac_fully_loaded
+FROM marketing_costs c
+JOIN (
+    SELECT channel, COUNT(*) AS new_users
+    FROM users
+    WHERE date_trunc('month', signup_date) = DATE '2025-04-01'
+    GROUP BY channel
+) u USING (channel)
+WHERE c.month = DATE '2025-04-01'
+ORDER BY u.new_users DESC;

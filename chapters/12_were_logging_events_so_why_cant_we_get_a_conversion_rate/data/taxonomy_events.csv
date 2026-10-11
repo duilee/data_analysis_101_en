@@ -1,0 +1,25 @@
+event_name,event_type,source,platform,screen_name,description,status,lifetime,version_added
+system_first_launch,System,Client,iOS|Android,app,First launch after install. Base event for every funnel,Live,Permanent,3.0.0
+page_view_onboarding_step,Page View,Client,iOS|Android,onboarding,Entered an onboarding step screen. The step property tells the steps apart,Live,Permanent,3.0.0
+tap_onboarding_next,Tap/Click,Client,iOS|Android,onboarding,Tapped the onboarding Next button,Live,Permanent,3.0.0
+tap_onboarding_skip,Tap/Click,Client,iOS|Android,onboarding,Tapped Skip in onboarding,Live,Permanent,3.0.0
+system_permission_granted,System,Client,iOS|Android,onboarding,Permission grant result. The permission property tells the kinds apart,Live,Permanent,3.0.0
+page_view_home,Page View,Client,iOS|Android,home,Entered the home screen,Live,Permanent,3.0.0
+view_main_banner,View,Client,iOS|Android,home,Top banner on home shown,Live,Permanent,3.0.0
+tap_main_banner,Tap/Click,Client,iOS|Android,home,Tapped the top banner on home,Live,Permanent,3.0.0
+view_content_card,View,Client,iOS|Android,home,Content card in the home feed shown,Live,Permanent,3.0.0
+tap_content_card,Tap/Click,Client,iOS|Android,home,Tapped a content card in the home feed,Live,Permanent,3.0.0
+page_view_content_detail,Page View,Client,iOS|Android,content_detail,Entered the content detail screen,Live,Permanent,3.0.0
+tap_like_button,Tap/Click,Client,iOS|Android,content_detail,Tapped Like on a content item,Live,Permanent,3.0.0
+tap_share_button,Tap/Click,Client,iOS|Android,content_detail,Tapped the Share button on a content item,Live,Permanent,3.0.0
+page_view_search,Page View,Client,iOS|Android,search,Entered the search screen,Live,Permanent,3.0.0
+tap_search_result,Tap/Click,Client,iOS|Android,search,Tapped a search result,Live,Permanent,3.0.0
+page_view_paywall,Page View,Client,iOS|Android,paywall,Entered the payment screen. The source property tells the entry paths apart,Live,Permanent,3.0.0
+tap_purchase_button,Tap/Click,Client,iOS|Android,paywall,Tapped the Purchase button,Live,Permanent,3.0.0
+system_subscription_started,System,Server,iOS|Android,server,Subscription started (server),Live,Permanent,3.0.0
+system_subscription_renewed,System,Server,iOS|Android,server,Subscription renewed (server daily batch),Live,Permanent,3.0.0
+page_view_settings,Page View,Client,iOS|Android,settings,Entered the settings screen,Live,Permanent,3.0.0
+tap_theme_toggle,Tap/Click,Client,iOS|Android,settings,Tapped the theme toggle,Live,Permanent,3.0.0
+system_push_sent,System,Server,iOS|Android,server,Push sent (server),Live,Permanent,3.0.0
+tap_push_notification,Tap/Click,Client,iOS|Android,app,Tapped a push notification,Live,Permanent,3.0.0
+page_view_profile,Page View,Client,iOS|Android,profile,Entered the profile screen,Live,Permanent,3.0.0

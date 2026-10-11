@@ -1,0 +1,24 @@
+-- Case 2. Retention catalog matching
+-- From the pre-built curve catalog (lifetime_catalog), find the row whose SSE (sum of squared errors)
+-- against the new cohort's observed (D1, D3, D7) is smallest, and take that row's lifetime as the estimate.
+--   (lifetime_catalog is a 3,456-row table generated in the notebook from a power-law grid D_t = D1 * t^b (b < 0) and registered in DuckDB)
+
+WITH new_obs AS (
+  SELECT
+    MAX(CASE WHEN day = 1 THEN retention END) AS d1,
+    MAX(CASE WHEN day = 3 THEN retention END) AS d3,
+    MAX(CASE WHEN day = 7 THEN retention END) AS d7
+  FROM cohort_retention
+),
+errors AS (
+  SELECT cat.D1, cat.b, cat.lifetime,
+         POWER(cat.D1 - obs.d1, 2) + POWER(cat.D3 - obs.d3, 2)
+           + POWER(cat.D7 - obs.d7, 2) AS sse
+  FROM lifetime_catalog AS cat CROSS JOIN new_obs AS obs
+)
+SELECT
+  ROUND(D1, 2)       AS matched_d1,
+  ROUND(b, 2)        AS matched_b,
+  ROUND(sse, 6)      AS sse,
+  ROUND(lifetime, 2) AS lifetime_estimate
+FROM errors ORDER BY sse LIMIT 1;
